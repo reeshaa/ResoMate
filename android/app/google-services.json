@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1001605275724",
+    "firebase_url": "https://resomate.firebaseio.com",
+    "project_id": "resomate",
+    "storage_bucket": "resomate.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1001605275724:android:1f938905459e97db56d4e9",
+        "android_client_info": {
+          "package_name": "com.issaparadox.resomate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1001605275724-ecbcfbvdu8694c7rlf134f8l23hckdad.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnL9RiHaPGx1rQgfTpgPB7mLaZiocb5mg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1001605275724-ecbcfbvdu8694c7rlf134f8l23hckdad.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

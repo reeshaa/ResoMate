@@ -34,24 +34,43 @@ class _HomeState extends State<Home> {
                             size: 80,
                             color: Colors.grey,
                           ),
-                          SizedBox(
-                            height: 35,
-                          ),
-                          Text(
-                            'No assignments pending',
-                            style: TextStyle(color: Colors.grey),
-                          ),
+                          SizedBox(height: 35),
+                          Text('No bands yet',
+                              style: TextStyle(color: Colors.grey)),
                         ],
                       ),
                     );
 
                   return CustomScrollView(
                     slivers: <Widget>[
+//
+// //
+                      // SliverList(
+                      //     delegate: SliverChildListDelegate([
+                      //   SliverToBoxAdapter(
+                      //     child: Container(
+                      //         height: 50,
+                      //         padding: EdgeInsets.all(20),
+                      //         child: Text("Categories",
+                      //             textAlign: TextAlign.left,
+                      //             style: TextStyle(
+                      //                 fontSize: 32,
+                      //                 fontWeight: FontWeight.w600))),
+                      //   )
+                      // ])),
+
+// //
+//
                       SliverList(delegate: SliverChildBuilderDelegate(
                           (BuildContext context, int index) {
                         if (index > currentAssignments.length - 1) return null;
-                        return PostCard(
-                          bandInfo: currentAssignments[index],
+                        return Column(
+                          children: <Widget>[
+                            PostCard(
+                              bandInfo: currentAssignments[index],
+                            ),
+                            SizedBox(height: 10),
+                          ],
                         );
                       })),
                     ],
@@ -61,17 +80,5 @@ class _HomeState extends State<Home> {
                 }
               }),
         ));
-  }
-}
-
-class Maincard extends StatefulWidget {
-  @override
-  _MaincardState createState() => _MaincardState();
-}
-
-class _MaincardState extends State<Maincard> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(height: 200, width: 400, child: Card(child: Text("data")));
   }
 }

@@ -5,13 +5,10 @@ class BandInfo {
   final String bandLogoURL;
   final String bandName;
   final String bandInfoID;
+  final String bandGenre;
 
-  BandInfo(
-    this.description,
-    this.bandLogoURL,
-    this.bandName,
-    this.bandInfoID,
-  );
+  BandInfo(this.description, this.bandLogoURL, this.bandName, this.bandInfoID,
+      this.bandGenre);
 
   factory BandInfo.fromJson(dynamic json) {
     return BandInfo(
@@ -19,6 +16,7 @@ class BandInfo {
       json['bandLogoURL'],
       json['bandName'],
       json['bandInfoID'],
+      json['bandGenre'],
     );
   }
 }

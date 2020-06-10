@@ -28,66 +28,50 @@ class _PostCardState extends State<PostCard> {
     Color dynamiciconcolor = (!isDarkMode) ? Colors.black54 : Colors.white70;
     Color dynamicuicolor =
         (!isDarkMode) ? new Color(0xfff8faf8) : Color.fromRGBO(35, 35, 35, 1.0);
-    return Card(
-        color: (!isDarkMode) ? Colors.white : Colors.black,
-        elevation: 0.0,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.fromLTRB(8.0, 4.0, 8.0, 4.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Row(
-                    children: <Widget>[
-                      new Container(
-                        height: 40.0,
-                        width: 40.0,
-                        decoration: new BoxDecoration(
-                          shape: BoxShape.circle,
-                          image: DecorationImage(
-                            image: new NetworkImage(
-                              profiledefault,
-                            ),
-                          ),
-                        ),
-                      ),
-                      new SizedBox(
-                        width: 10.0,
-                      ),
-                      new Text(
-                        widget.bandInfo.bandName,
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      )
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              // height: 250,
-              child: Image.network(
-                widget.bandInfo.bandLogoURL,
-                // cacheHeight: 1000,
-                fit: BoxFit.contain,
-                loadingBuilder: (BuildContext context, Widget child,
-                    ImageChunkEvent loadingProgress) {
-                  if (loadingProgress == null) return child;
-                  return Center(
-                    child: CircularProgressIndicator(
-                      value: loadingProgress.expectedTotalBytes != null
-                          ? loadingProgress.cumulativeBytesLoaded /
-                              loadingProgress.expectedTotalBytes
-                          : null,
+    return Container(
+      padding: EdgeInsets.all(2),
+      height: 170,
+      child: Card(
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+          color: (!isDarkMode) ? Colors.white : Colors.black,
+          elevation: 5.0,
+          child: Container(
+            padding: EdgeInsets.all(10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    CircleAvatar(
+                      maxRadius: 50,
+                      backgroundImage:
+                          NetworkImage(widget.bandInfo.bandLogoURL),
                     ),
-                  );
-                },
-              ),
+                    SizedBox(height: 10),
+                    Text(
+                      '${widget.bandInfo.bandGenre}',
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  width: 30.0,
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text(widget.bandInfo.bandName,
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 32)),
+                  ],
+                ),
+              ],
             ),
-          ],
-        ));
+          )),
+    );
   }
 }

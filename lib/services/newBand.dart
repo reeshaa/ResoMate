@@ -1,12 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:uuid/uuid.dart';
-import 'package:resomate/models/bandinfo.dart';
+// import 'package:resomate/models/bandinfo.dart';
 
 Future<int> addAssignmentToDB(
   String bandName,
   String bandLogoURL,
   String description,
+  String bandGenre,
 ) async {
   int statusCode = 1;
 
@@ -19,7 +20,8 @@ Future<int> addAssignmentToDB(
     'bandName': bandName,
     'description': description,
     'bandLogoURL': bandLogoURL,
-    'bandInfoID': bandInfoID
+    'bandInfoID': bandInfoID,
+    'bandGenre': bandGenre,
   });
 
   await Firestore.instance
@@ -38,6 +40,7 @@ Future<int> editAssignmentinDB(
   String description,
   String bandLogoURL,
   String bandName,
+  String bandGenre,
 }) async {
   int statusCode = 1;
 
@@ -47,7 +50,8 @@ Future<int> editAssignmentinDB(
     'bandname': bandName,
     'description': description,
     'bandlogo': bandLogoURL,
-    'bandInfoID': bandInfoID
+    'bandInfoID': bandInfoID,
+    'bandGenre': bandGenre,
   });
 
   await Firestore.instance

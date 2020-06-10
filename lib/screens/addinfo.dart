@@ -25,6 +25,7 @@ class _AddAssignmentState extends State<AddAssignment> {
   String bandLogoURL;
   String bandName;
   String bandInfoID;
+  String bandGenre;
 
   @override
   void initState() {
@@ -45,7 +46,10 @@ class _AddAssignmentState extends State<AddAssignment> {
       addAssignmentToDB(
         _titlecontroller?.text ?? "Untitled",
         _subjectcodecontroller?.text ?? "NESC",
-        _descriptioncontroller?.text ?? "Description",
+        _descriptioncontroller?.text ?? "Band Description",
+        _moredetailslinkcontroller?.text ?? "Band dup Genre",
+
+        //
       ).then((statusCode) {
         setState(() {
           this.isLoading = false;
@@ -54,7 +58,7 @@ class _AddAssignmentState extends State<AddAssignment> {
           case 1:
             print('Added');
             Fluttertoast.showToast(
-                msg: "Assignment Added",
+                msg: "Band Added",
                 toastLength: Toast.LENGTH_SHORT,
                 gravity: ToastGravity.BOTTOM,
                 textColor: Colors.white,
@@ -105,27 +109,9 @@ class _AddAssignmentState extends State<AddAssignment> {
                 }
                 return null;
               },
-              // obscureText: isPassword,
               controller: controllervar,
-              decoration: InputDecoration(
-                  border: InputBorder.none,
-                  // fillColor: Color(0xfff3f3f4),
-                  filled: true))
-        ],
-      ),
-    );
-  }
-
-  Widget _deadlineSelector() {
-    return Container(
-      margin: EdgeInsets.symmetric(vertical: 10),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          Text(
-            'Deadline ',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
-          ),
+              decoration:
+                  InputDecoration(border: InputBorder.none, filled: true))
         ],
       ),
     );
@@ -155,10 +141,8 @@ class _AddAssignmentState extends State<AddAssignment> {
               keyboardType: TextInputType.multiline,
               maxLines: 18,
               controller: controllervar,
-              decoration: InputDecoration(
-                  border: InputBorder.none,
-                  // fillColor: Color(0xfff3f3f4),
-                  filled: true))
+              decoration:
+                  InputDecoration(border: InputBorder.none, filled: true))
         ],
       ),
     );
@@ -172,10 +156,9 @@ class _AddAssignmentState extends State<AddAssignment> {
             _entryField("Title", controllervar: _titlecontroller),
             _entryField("Subject Code",
                 controllervar: _subjectcodecontroller, isRequired: false),
-            _deadlineSelector(),
             _descriptionField("Description",
                 controllervar: _descriptioncontroller),
-            _entryField("Attachments URL",
+            _entryField("Band Genre",
                 controllervar: _moredetailslinkcontroller, isRequired: false),
           ],
           physics: BouncingScrollPhysics(),

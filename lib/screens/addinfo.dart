@@ -19,13 +19,19 @@ class _AddAssignmentState extends State<AddAssignment> {
       _descriptioncontroller,
       _subjectcodecontroller,
       _moredetailslinkcontroller,
-      _submissionlinkcontroller;
+      _submissionlinkcontroller,
+      _membercountcontroller,
+      _placecontroller,
+      _instrumentcontroller;
   final _formKey = GlobalKey<FormState>();
   String description;
   String bandLogoURL;
   String bandName;
   String bandInfoID;
   String bandGenre;
+  String bandMemberNo;
+  String bandPlace;
+  String instrument;
 
   @override
   void initState() {
@@ -35,6 +41,9 @@ class _AddAssignmentState extends State<AddAssignment> {
     this._moredetailslinkcontroller = new TextEditingController();
     this._subjectcodecontroller = new TextEditingController();
     this._submissionlinkcontroller = new TextEditingController();
+    this._membercountcontroller = new TextEditingController();
+    this._placecontroller = new TextEditingController();
+    this._instrumentcontroller = new TextEditingController();
   }
 
   onPressRegister() {
@@ -47,9 +56,10 @@ class _AddAssignmentState extends State<AddAssignment> {
         _titlecontroller?.text ?? "Untitled",
         _subjectcodecontroller?.text ?? "NESC",
         _descriptioncontroller?.text ?? "Band Description",
-        _moredetailslinkcontroller?.text ?? "Band dup Genre",
-
-        //
+        _moredetailslinkcontroller?.text ?? "Band Genre",
+        _membercountcontroller?.text ?? "Band Members",
+        _placecontroller?.text ?? "Place",
+        _instrumentcontroller?.text ?? "Place",
       ).then((statusCode) {
         setState(() {
           this.isLoading = false;
@@ -154,12 +164,18 @@ class _AddAssignmentState extends State<AddAssignment> {
         child: ListView(
           children: <Widget>[
             _entryField("Title", controllervar: _titlecontroller),
-            _entryField("Subject Code",
+            _entryField("Image URL",
                 controllervar: _subjectcodecontroller, isRequired: false),
             _descriptionField("Description",
                 controllervar: _descriptioncontroller),
             _entryField("Band Genre",
                 controllervar: _moredetailslinkcontroller, isRequired: false),
+            _entryField("Place",
+                controllervar: _placecontroller, isRequired: true),
+            _entryField("Member Count",
+                controllervar: _membercountcontroller, isRequired: true),
+            _entryField("Instrument",
+                controllervar: _instrumentcontroller, isRequired: true),
           ],
           physics: BouncingScrollPhysics(),
         ));

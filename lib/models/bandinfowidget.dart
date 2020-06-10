@@ -29,17 +29,17 @@ class _PostCardState extends State<PostCard> {
     Color dynamicuicolor =
         (!isDarkMode) ? new Color(0xfff8faf8) : Color.fromRGBO(35, 35, 35, 1.0);
     return Container(
-      padding: EdgeInsets.all(2),
-      height: 170,
+      padding: EdgeInsets.all(1.5),
+      height: 155,
       child: Card(
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           color: (!isDarkMode) ? Colors.white : Colors.black,
-          elevation: 5.0,
+          elevation: 1.1,
           child: Container(
             padding: EdgeInsets.all(10),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+              // mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 Column(
@@ -50,22 +50,47 @@ class _PostCardState extends State<PostCard> {
                       backgroundImage:
                           NetworkImage(widget.bandInfo.bandLogoURL),
                     ),
-                    Text(
-                      '${widget.bandInfo.bandGenre}',
-                      style: TextStyle(fontSize: 18),
+                    SizedBox(height: 5),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text('${widget.bandInfo.bandGenre}',
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.w600)),
+                      ],
                     ),
                   ],
                 ),
                 SizedBox(
-                  width: 30.0,
+                  width: 40.0,
                 ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text(widget.bandInfo.bandName,
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 32)),
-                  ],
+                Container(
+                  width: 235,
+                  padding: EdgeInsets.all(2),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Column(
+                        children: <Widget>[
+                          Text(widget.bandInfo.bandName,
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 31)),
+                          SizedBox(width: 25),
+                        ],
+                      ),
+                      Column(
+                        children: <Widget>[
+                          Text(
+                              "No. of band members : ${widget.bandInfo.bandMemberNo}\nLocation  : ${widget.bandInfo.bandPlace}\n",
+                              style:
+                                  TextStyle(fontSize: 15, color: Colors.grey)),
+                          Text("Looking for ${widget.bandInfo.instrument}",
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w600)),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),

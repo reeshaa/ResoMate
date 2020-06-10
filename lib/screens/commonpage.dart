@@ -70,7 +70,9 @@ class _CommonPageState extends State<CommonPage> {
               body: Container(
                 child: TabBarView(
                   children: [
-                    Container(child: Center(child: Text("data2"))),
+                    Container(
+                        color: Colors.white,
+                        child: Center(child: Text("data2"))),
                     Home(),
                     Profile(),
                   ],

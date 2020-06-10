@@ -8,6 +8,9 @@ Future<int> addAssignmentToDB(
   String bandLogoURL,
   String description,
   String bandGenre,
+  String bandMemberNo,
+  String bandPlace,
+  String instrument,
 ) async {
   int statusCode = 1;
 
@@ -22,6 +25,9 @@ Future<int> addAssignmentToDB(
     'bandLogoURL': bandLogoURL,
     'bandInfoID': bandInfoID,
     'bandGenre': bandGenre,
+    'bandMemberNo': bandMemberNo,
+    'bandPlace': bandPlace,
+    'instrument': instrument,
   });
 
   await Firestore.instance
@@ -41,6 +47,9 @@ Future<int> editAssignmentinDB(
   String bandLogoURL,
   String bandName,
   String bandGenre,
+  String bandMemberNo,
+  String bandPlace,
+  String instrument,
 }) async {
   int statusCode = 1;
 
@@ -52,6 +61,9 @@ Future<int> editAssignmentinDB(
     'bandlogo': bandLogoURL,
     'bandInfoID': bandInfoID,
     'bandGenre': bandGenre,
+    'bandMemberNo': bandMemberNo,
+    'bandPlace': bandPlace,
+    'instrument': instrument,
   });
 
   await Firestore.instance

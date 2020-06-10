@@ -69,7 +69,7 @@ class _HomeState extends State<Home> {
                             PostCard(
                               bandInfo: currentAssignments[index],
                             ),
-                            SizedBox(height: 10),
+                            SizedBox(height: 0.5),
                           ],
                         );
                       })),

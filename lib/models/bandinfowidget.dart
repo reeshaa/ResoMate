@@ -50,11 +50,9 @@ class _PostCardState extends State<PostCard> {
                       backgroundImage:
                           NetworkImage(widget.bandInfo.bandLogoURL),
                     ),
-                    SizedBox(height: 10),
                     Text(
                       '${widget.bandInfo.bandGenre}',
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                      style: TextStyle(fontSize: 18),
                     ),
                   ],
                 ),

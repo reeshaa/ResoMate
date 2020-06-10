@@ -30,7 +30,7 @@ class _PostCardState extends State<PostCard> {
         (!isDarkMode) ? new Color(0xfff8faf8) : Color.fromRGBO(35, 35, 35, 1.0);
     return Container(
       padding: EdgeInsets.all(1.5),
-      height: 155,
+      height: 150,
       child: Card(
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
@@ -42,11 +42,12 @@ class _PostCardState extends State<PostCard> {
               // mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
+                SizedBox(width: 5),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     CircleAvatar(
-                      maxRadius: 50,
+                      maxRadius: 48,
                       backgroundImage:
                           NetworkImage(widget.bandInfo.bandLogoURL),
                     ),

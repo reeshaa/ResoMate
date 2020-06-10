@@ -190,13 +190,11 @@ class _AddAssignmentState extends State<AddAssignment> {
           FlatButton(
             child: isLoading
                 ? CupertinoActivityIndicator()
-                : Text(
-                    'ADD',
+                : Text('ADD',
                     style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white),
-                  ),
+                        color: Colors.white)),
             onPressed: () {
               onPressRegister();
             },

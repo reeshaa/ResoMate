@@ -14,6 +14,7 @@ class _DetailState extends State<Detail> {
         child: Center(
           child: Container(
               child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Text("ADD USER DETAILS HERE"),
               RaisedButton(

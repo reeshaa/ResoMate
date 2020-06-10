@@ -6,7 +6,7 @@ import 'dart:async';
 import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'dart:typed_data';
-
+import 'package:resomate/screens/bandpressed.dart';
 import 'package:resomate/models/bandinfo.dart';
 
 class PostCard extends StatefulWidget {
@@ -28,74 +28,86 @@ class _PostCardState extends State<PostCard> {
     Color dynamiciconcolor = (!isDarkMode) ? Colors.black54 : Colors.white70;
     Color dynamicuicolor =
         (!isDarkMode) ? new Color(0xfff8faf8) : Color.fromRGBO(35, 35, 35, 1.0);
-    return Container(
-      padding: EdgeInsets.all(1.5),
-      height: 150,
-      child: Card(
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-          color: (!isDarkMode) ? Colors.white : Colors.black,
-          elevation: 1.1,
-          child: Container(
-            padding: EdgeInsets.all(10),
-            child: Row(
-              // mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: <Widget>[
-                SizedBox(width: 5),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    CircleAvatar(
-                      maxRadius: 48,
-                      backgroundImage:
-                          NetworkImage(widget.bandInfo.bandLogoURL),
-                    ),
-                    SizedBox(height: 5),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text('${widget.bandInfo.bandGenre}',
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.w600)),
-                      ],
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  width: 40.0,
-                ),
-                Container(
-                  width: 235,
-                  padding: EdgeInsets.all(2),
-                  child: Column(
+    return InkWell(
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => Bandpressed(),
+              fullscreenDialog: true,
+            ));
+      },
+      hoverColor: Colors.blueAccent,
+      splashColor: Colors.purple,
+      child: Container(
+        padding: EdgeInsets.all(1.5),
+        height: 150,
+        child: Card(
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            color: (!isDarkMode) ? Colors.white : Colors.black,
+            elevation: 1.1,
+            child: Container(
+              padding: EdgeInsets.all(10),
+              child: Row(
+                // mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>[
+                  SizedBox(width: 5),
+                  Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Column(
-                        children: <Widget>[
-                          Text(widget.bandInfo.bandName,
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 31)),
-                          SizedBox(width: 25),
-                        ],
+                      CircleAvatar(
+                        maxRadius: 48,
+                        backgroundImage:
+                            NetworkImage(widget.bandInfo.bandLogoURL),
                       ),
+                      SizedBox(height: 5),
                       Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Text(
-                              "No. of band members : ${widget.bandInfo.bandMemberNo}\nLocation  : ${widget.bandInfo.bandPlace}\n",
-                              style:
-                                  TextStyle(fontSize: 15, color: Colors.grey)),
-                          Text("Looking for ${widget.bandInfo.instrument}",
+                          Text('${widget.bandInfo.bandGenre}',
                               style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.w600)),
+                                  fontSize: 16, fontWeight: FontWeight.w600)),
                         ],
                       ),
                     ],
                   ),
-                ),
-              ],
-            ),
-          )),
+                  SizedBox(
+                    width: 40.0,
+                  ),
+                  Container(
+                    width: 235,
+                    padding: EdgeInsets.all(2),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Column(
+                          children: <Widget>[
+                            Text(widget.bandInfo.bandName,
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 31)),
+                            SizedBox(width: 25),
+                          ],
+                        ),
+                        Column(
+                          children: <Widget>[
+                            Text(
+                                "No. of band members : ${widget.bandInfo.bandMemberNo}\nLocation  : ${widget.bandInfo.bandPlace}\n",
+                                style: TextStyle(
+                                    fontSize: 15, color: Colors.grey)),
+                            Text("Looking for ${widget.bandInfo.instrument}",
+                                style: TextStyle(
+                                    fontSize: 17, fontWeight: FontWeight.w600)),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            )),
+      ),
     );
   }
 }

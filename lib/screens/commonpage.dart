@@ -4,6 +4,7 @@ import 'package:jumping_bottom_nav_bar/jumping_bottom_nav_bar.dart';
 import 'package:resomate/screens/addinfo.dart';
 import 'package:resomate/screens/profile.dart';
 import 'package:resomate/screens/home.dart';
+import 'package:resomate/screens/drawerwidget.dart';
 // import 'package:flutter_icons/flutter_icons.dart';
 
 class CommonPage extends StatefulWidget {
@@ -60,13 +61,23 @@ class _CommonPageState extends State<CommonPage> {
                         })
                   ],
                   // backgroundColor: Colors.deepPurple[400],
-                  backgroundColor: Colors.pink[900],
+                  // backgroundColor: Colors.pink[900],
+                  flexibleSpace: Container(
+                      decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomRight,
+                              colors: <Color>[
+                        // Colors.purpleAccent,
+                        Colors.deepPurple,
+                        // Colors.pink[400],
+                        Colors.pink[900]
+                      ]))),
                   title: Text(
                     "ResoMate",
                     style: TextStyle(fontSize: 24),
                   )),
-              drawer:
-                  Drawer(child: SafeArea(child: Text("ADD RANDOM STUFF HERE"))),
+              drawer: Drawer(child: SafeArea(child: DrawerWidget())),
               body: Container(
                 child: TabBarView(
                   children: [

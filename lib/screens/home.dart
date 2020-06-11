@@ -11,74 +11,72 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: Scaffold(
-          backgroundColor: Colors.white,
-          body: StreamBuilder<QuerySnapshot>(
-              stream: Firestore.instance.collection('bands').snapshots(),
-              builder: (context, snapshot) {
-                if (snapshot.hasData) {
-                  List<BandInfo> currentAssignments = snapshot.data.documents
-                      .map((doc) => BandInfo.fromJson(doc))
-                      .toList();
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: StreamBuilder<QuerySnapshot>(
+          stream: Firestore.instance.collection('bands').snapshots(),
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              List<BandInfo> currentAssignments = snapshot.data.documents
+                  .map((doc) => BandInfo.fromJson(doc))
+                  .toList();
 
-                  if (currentAssignments.length == 0)
-                    return Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          Icon(
-                            Icons.assignment_turned_in,
-                            size: 80,
-                            color: Colors.grey,
-                          ),
-                          SizedBox(height: 35),
-                          Text('No bands yet',
-                              style: TextStyle(color: Colors.grey)),
-                        ],
+              if (currentAssignments.length == 0)
+                return Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Icon(
+                        Icons.assignment_turned_in,
+                        size: 80,
+                        color: Colors.grey,
                       ),
-                    );
-
-                  return CustomScrollView(
-                    slivers: <Widget>[
-//
-// //
-                      // SliverList(
-                      //     delegate: SliverChildListDelegate([
-                      //   SliverToBoxAdapter(
-                      //     child: Container(
-                      //         height: 50,
-                      //         padding: EdgeInsets.all(20),
-                      //         child: Text("Categories",
-                      //             textAlign: TextAlign.left,
-                      //             style: TextStyle(
-                      //                 fontSize: 32,
-                      //                 fontWeight: FontWeight.w600))),
-                      //   )
-                      // ])),
-
-// //
-//
-                      SliverList(delegate: SliverChildBuilderDelegate(
-                          (BuildContext context, int index) {
-                        if (index > currentAssignments.length - 1) return null;
-                        return Column(
-                          children: <Widget>[
-                            PostCard(
-                              bandInfo: currentAssignments[index],
-                            ),
-                            SizedBox(height: 0.5),
-                          ],
-                        );
-                      })),
+                      SizedBox(height: 35),
+                      Text('No bands yet',
+                          style: TextStyle(color: Colors.grey)),
                     ],
-                  );
-                } else {
-                  return Center(child: CircularProgressIndicator());
-                }
-              }),
-        ));
+                  ),
+                );
+
+              return CustomScrollView(
+                slivers: <Widget>[
+//
+// //
+                  // SliverList(
+                  //     delegate: SliverChildListDelegate([
+                  //   SliverToBoxAdapter(
+                  //     child: Container(
+                  //         height: 50,
+                  //         padding: EdgeInsets.all(20),
+                  //         child: Text("Categories",
+                  //             textAlign: TextAlign.left,
+                  //             style: TextStyle(
+                  //                 fontSize: 32,
+                  //                 fontWeight: FontWeight.w600))),
+                  //   )
+                  // ])),
+
+// //
+//
+                  SliverList(delegate: SliverChildBuilderDelegate(
+                      (BuildContext context, int index) {
+                    if (index > currentAssignments.length - 1) return null;
+                    return Column(
+                      children: <Widget>[
+                        PostCard(
+                          bandInfo: currentAssignments[index],
+                        ),
+                        SizedBox(height: 0.5),
+                      ],
+                    );
+                  })),
+                ],
+              );
+            } else {
+              return Center(child: CircularProgressIndicator());
+            }
+          }),
+    );
   }
 }

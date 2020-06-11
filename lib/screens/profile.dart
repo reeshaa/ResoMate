@@ -8,10 +8,8 @@ class Profile extends StatefulWidget {
 class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: Scaffold(
-            backgroundColor: Colors.white,
-            body: Center(child: Container(child: Text("DO PROFILE PAGE")))));
+    return Scaffold(
+        backgroundColor: Colors.white,
+        body: Center(child: Container(child: Text("DO PROFILE PAGE"))));
   }
 }

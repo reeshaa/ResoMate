@@ -34,71 +34,67 @@ class _CommonPageState extends State<CommonPage> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: DefaultTabController(
-          initialIndex: 1,
-          length: iconList.length,
-          child: MaterialApp(
-            debugShowCheckedModeBanner: false,
-            home: Scaffold(
-              backgroundColor: Colors.pink[400],
-              appBar: AppBar(
-                  elevation: 10,
-                  actions: <Widget>[
-                    IconButton(
-                        icon: Icon(
-                          Icons.search,
-                          color: Colors.white,
-                          size: 24,
-                        ),
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => AddAssignment()));
-                        })
-                  ],
-                  // backgroundColor: Colors.deepPurple[400],
-                  // backgroundColor: Colors.pink[900],
-                  flexibleSpace: Container(
-                      decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                              begin: Alignment.topLeft,
-                              end: Alignment.bottomRight,
-                              colors: <Color>[
-                        // Colors.purpleAccent,
-                        Colors.deepPurple,
-                        // Colors.pink[400],
-                        Colors.pink[900]
-                      ]))),
-                  title: Text(
-                    "ResoMate",
-                    style: TextStyle(fontSize: 24),
-                  )),
-              drawer: Drawer(child: SafeArea(child: DrawerWidget())),
-              body: Container(
-                child: TabBarView(
-                  children: [
-                    Container(
+    return Scaffold(
+      body: DefaultTabController(
+        initialIndex: 1,
+        length: iconList.length,
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          home: Scaffold(
+            backgroundColor: Colors.pink[400],
+            appBar: AppBar(
+                elevation: 10,
+                actions: <Widget>[
+                  IconButton(
+                      icon: Icon(
+                        Icons.search,
                         color: Colors.white,
-                        child: Center(child: Text("data2"))),
-                    Home(),
-                    Profile(),
-                  ],
-                ),
+                        size: 24,
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => AddAssignment()));
+                      })
+                ],
+                // backgroundColor: Colors.deepPurple[400],
+                // backgroundColor: Colors.pink[900],
+                flexibleSpace: Container(
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: <Color>[
+                      // Colors.purpleAccent,
+                      Colors.deepPurple,
+                      // Colors.pink[400],
+                      Colors.pink[900]
+                    ]))),
+                title: Text(
+                  "ResoMate",
+                  style: TextStyle(fontSize: 24),
+                )),
+            drawer: Drawer(child: SafeArea(child: DrawerWidget())),
+            body: Container(
+              child: TabBarView(
+                children: [
+                  Container(
+                      color: Colors.white, child: Center(child: Text("data2"))),
+                  Home(),
+                  Profile(),
+                ],
               ),
-              bottomNavigationBar: JumpingTabBar(
-                duration: Duration(milliseconds: 1600),
-                onChangeTab: onChangeTab,
-                circleGradient: LinearGradient(colors: [
-                  Colors.purpleAccent,
-                  Colors.deepPurple,
-                ], begin: Alignment.bottomLeft, end: Alignment.topRight),
-                items: iconList,
-                selectedIndex: selectedIndex,
-              ),
+            ),
+            bottomNavigationBar: JumpingTabBar(
+              duration: Duration(milliseconds: 1600),
+              onChangeTab: onChangeTab,
+              circleGradient: LinearGradient(colors: [
+                Colors.purpleAccent,
+                Colors.deepPurple,
+              ], begin: Alignment.bottomLeft, end: Alignment.topRight),
+              items: iconList,
+              selectedIndex: selectedIndex,
             ),
           ),
         ),

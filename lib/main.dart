@@ -9,6 +9,7 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: BandSolo(),
       ),
@@ -19,6 +20,8 @@ class MainPage extends StatelessWidget {
 class BandSolo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     return Scaffold(
       body: SafeArea(
           child: Container(
@@ -31,7 +34,7 @@ class BandSolo extends StatelessWidget {
                 padding: EdgeInsets.all(20),
                 child: Image.asset(
                   'assets/entertainment (1).png',
-                  width: 300,
+                  width: size.width * 0.7,
                   fit: BoxFit.fitHeight,
                 ),
               ),

@@ -103,3 +103,72 @@ class _MaincardState extends State<Maincard> {
     return Container(height: 200, width: 400, child: Card(child: Text("data")));
   }
 }
+
+
+
+
+
+
+
+
+APP BAR
+
+
+//     body: CustomScrollView(shrinkWrap: true, slivers: <Widget>[
+        //   SliverAppBar(
+        //     expandedHeight: size.height * 0.3,
+        //     pinned: true,
+        //     floating: false,
+        //     flexibleSpace: FlexibleSpaceBar(
+        //       title: Text('Band Profile'),
+        //       // background: Image.network(widget.bandInfo.bandLogoURL),
+        //       background: Image.asset('assets/music-and-multimedia.png'),
+        //     ),
+        //   ),
+        //   SliverList(
+        //       delegate: SliverChildListDelegate([
+        //     SizedBox(height: size.height *0.2),
+
+        //   ])),
+        // SliverFillRemaining(),
+        // appBar: AppBar(),
+
+
+// Positioned(
+        //   // alignment: Alignment(0.6, -2.2),
+        //   bottom: size.height * 0.65,
+        //   right: -size.height * 1.35,
+        //   child: Image.asset(
+        //     'assets/circle-cropped.png',
+        //     // height: size.height * .5,
+        //   ),
+        // ),
+
+
+
+         Align(
+            alignment: Alignment(0, 0.65),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Text(
+                  'Band Lead\nBand Strength\nLocation\n',
+                  style: TextStyle(
+                    fontSize: size.width * 0.055,
+                  ),
+                ),
+                Text(
+                  ':\n:\n:\n',
+                  style: TextStyle(
+                    fontSize: size.width * 0.055,
+                  ),
+                ),
+                Text(
+                  '\t\t\t\t\tSid\n\t\t\t\t\t5\n\t\t\t\t\tColumbia\n',
+                  style: TextStyle(
+                    fontSize: size.width * 0.055,
+                  ),
+                ),
+              ],
+            ),
+          ),

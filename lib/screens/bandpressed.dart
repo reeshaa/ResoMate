@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter_icons/flutter_icons.dart';
+import 'package:resomate/models/bandinfo.dart';
+import 'package:resomate/models/bandinfowidget.dart';
+import 'package:social_media_buttons/social_media_buttons.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Bandpressed extends StatefulWidget {
+  final BandInfo bandInfo;
+  Bandpressed({@required this.bandInfo});
   @override
   _BandpressedState createState() => _BandpressedState();
 }
@@ -8,17 +16,144 @@ class Bandpressed extends StatefulWidget {
 class _BandpressedState extends State<Bandpressed> {
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     return Scaffold(
-      body: Center(
-        child: Container(
-            color: Colors.white,
-            child: RaisedButton(
-              onPressed: () {
-                Navigator.pop(context);
+        backgroundColor: Colors.white,
+        body: Stack(children: <Widget>[
+          Positioned(
+            bottom: size.height * 0.72,
+            right: -size.height * 1.45,
+            child: Image.asset(
+              'assets/circle-cropped.png',
+            ),
+          ),
+          Align(
+            alignment: Alignment(-0.95, -0.9),
+            child: IconButton(
+                icon: Icon(
+                  FontAwesome.arrow_left,
+                  // Icons.arrow_back_ios,
+                  size: 30,
+                  color: Colors.white,
+                ),
+                onPressed: () {
+                  // TODO :add naviation
+                }),
+          ),
+          Align(
+            alignment: Alignment(0, -0.7),
+            child: CircleAvatar(
+              maxRadius: size.width * .2,
+              backgroundImage: NetworkImage(
+                  'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSUsZzX75YWPYoBFB_Q-6vloVVYPDhDYiY7AsN8-NSHLcGmToFN&usqp=CAU'),
+            ),
+          ),
+          Align(
+            alignment: Alignment(0, -.25),
+            child: Text(
+              "BAND NAME",
+              style: TextStyle(
+                  fontSize: size.width * 0.08, fontWeight: FontWeight.w700),
+            ),
+          ),
+          Align(
+            alignment: Alignment(0, -.16),
+            child: Text("genre",
+                style: TextStyle(
+                  fontSize: size.width * 0.04,
+                  color: Colors.grey,
+                )),
+          ),
+          Align(
+            alignment: Alignment(0, 0.25),
+            child: Container(
+              height: size.height / 3.5,
+              width: size.width * 0.9,
+              child: Card(
+                  elevation: 10,
+                  child: Center(
+                      child: Text(
+                    'some shitty ass\nlong\nbio',
+                    style: TextStyle(
+                      fontSize: size.width * 0.05,
+                    ),
+                  ))),
+            ),
+          ),
+          Align(
+              alignment: Alignment(-.7, 0.6),
+              child: Text("Whom to contact?",
+                  style: TextStyle(
+                      fontSize: size.width * 0.07,
+                      fontWeight: FontWeight.w600))),
+          Align(
+              alignment: Alignment(-.75, 0.7),
+              child: Text("Name of that person",
+                  style: TextStyle(fontSize: size.width * 0.05))),
+          Align(
+            alignment: Alignment(0.82, 0.7),
+            child: SocialMediaButton.whatsapp(
+              size: size.width * 0.18,
+              color: Colors.green[400],
+              url: "https://twitter.com/CipliOnat",
+              onTap: () {
+                print('onTap ');
               },
-              color: Colors.amber,
-            )),
-      ),
-    );
+            ),
+          ),
+          Align(
+            alignment: Alignment(0, 0.95),
+            child: SocialMediaButton.twitter(
+              url: "https://twitter.com/CipliOnat",
+              size: size.width * 0.09,
+              color: Colors.blue,
+            ),
+          ),
+          Align(
+            alignment: Alignment(-0.3, 0.95),
+            child: SocialMediaButton.instagram(
+              size: size.width * 0.09,
+              color: Colors.pink,
+              url: "https://twitter.com/CipliOnat",
+              onTap: () {
+                print('onTap ');
+              },
+            ),
+          ),
+          Align(
+            alignment: Alignment(0.3, 0.95),
+            child: SocialMediaButton.spotify(
+              color: Colors.lightGreen[900],
+              size: size.width * 0.09,
+              url: "https://twitter.com/CipliOnat",
+              onTap: () {
+                print('onTap ');
+              },
+            ),
+          ),
+          Align(
+            alignment: Alignment(0.6, 0.95),
+            child: SocialMediaButton.youtube(
+              color: Colors.redAccent[700],
+              size: size.width * 0.09,
+              url: "https://twitter.com/CipliOnat",
+              onTap: () {
+                print('onTap ');
+              },
+            ),
+          ),
+          Align(
+            alignment: Alignment(-0.6, 0.95),
+            child: SocialMediaButton.facebook(
+              color: Colors.blue,
+              size: size.width * 0.09,
+              url: "https://twitter.com/CipliOnat",
+              onTap: () {
+                print('onTap ');
+              },
+            ),
+          ),
+        ]));
   }
 }

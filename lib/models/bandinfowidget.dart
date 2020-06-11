@@ -19,10 +19,6 @@ class PostCard extends StatefulWidget {
 
 class _PostCardState extends State<PostCard> {
   @override
-  final String profiledefault =
-      'https://firebasestorage.googleapis.com/v0/b/instaclone-63929.appspot.com/o/Deafult-Profile-Picture.png?alt=media&token=9a731929-a94c-4ce9-b77c-db317fa6148e';
-
-  @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
@@ -35,9 +31,7 @@ class _PostCardState extends State<PostCard> {
         Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => Bandpressed(),
-              // fullscreenDialog: true,
-            ));
+                builder: (context) => Bandpressed(bandInfo: widget.bandInfo)));
       },
       hoverColor: Colors.blueAccent,
       splashColor: Colors.purple,

@@ -41,7 +41,7 @@ class _PostCardState extends State<PostCard> {
       splashColor: Colors.purple,
       child: Container(
         padding: EdgeInsets.all(1.5),
-        height: 150,
+        height: 152,
         child: Card(
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
@@ -77,7 +77,7 @@ class _PostCardState extends State<PostCard> {
                     width: 40.0,
                   ),
                   Container(
-                    width: 235,
+                    width: 220,
                     padding: EdgeInsets.all(2),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,

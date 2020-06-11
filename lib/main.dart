@@ -16,63 +16,62 @@ class MainPage extends StatelessWidget {
   }
 }
 
-class BandSolo extends StatefulWidget {
-  @override
-  _BandSoloState createState() => _BandSoloState();
-}
-
-class _BandSoloState extends State<BandSolo> {
+class BandSolo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'ResoMate',
-      color: Colors.white,
-      home: Scaffold(
-        body: SafeArea(
-            child: Container(
-                child: Center(
-          child: Stack(children: <Widget>[
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Container(
-                    height: 60,
-                    width: 200,
-                    child: RaisedButton(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20)),
-                      elevation: 20,
-                      color: Colors.deepPurpleAccent,
-                      onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Detail()));
-                      },
-                      child: Text("Join a Band",
-                          style: TextStyle(color: Colors.white, fontSize: 20)),
-                    )),
-                SizedBox(height: 65),
-                Container(
-                    height: 60,
-                    width: 200,
-                    child: RaisedButton(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20)),
-                      elevation: 20,
-                      color: Colors.deepPurpleAccent,
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => Detail()),
-                        );
-                      },
-                      child: Text("Find a Homie",
-                          style: TextStyle(color: Colors.white, fontSize: 20)),
-                    )),
-              ],
-            ),
-          ]),
-        ))),
-      ),
+    return Scaffold(
+      body: SafeArea(
+          child: Container(
+              child: Center(
+        child: Stack(children: <Widget>[
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Container(
+                padding: EdgeInsets.all(20),
+                child: Image.asset(
+                  'assets/entertainment (1).png',
+                  width: 300,
+                  fit: BoxFit.fitHeight,
+                ),
+              ),
+              Container(
+                  height: 60,
+                  width: 200,
+                  child: RaisedButton(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20)),
+                    elevation: 20,
+                    color: Colors.deepPurpleAccent,
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Detail()));
+                    },
+                    child: Text("Join a Band",
+                        style: TextStyle(color: Colors.white, fontSize: 20)),
+                  )),
+              SizedBox(height: 30),
+              Container(
+                  height: 60,
+                  width: 200,
+                  child: RaisedButton(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20)),
+                    elevation: 20,
+                    color: Colors.deepPurpleAccent,
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Detail()),
+                      );
+                    },
+                    child: Text("Find a Homie",
+                        style: TextStyle(color: Colors.white, fontSize: 20)),
+                  )),
+            ],
+          ),
+        ]),
+      ))),
     );
   }
 }

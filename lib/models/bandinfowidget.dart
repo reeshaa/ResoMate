@@ -34,7 +34,7 @@ class _PostCardState extends State<PostCard> {
             context,
             MaterialPageRoute(
               builder: (context) => Bandpressed(),
-              fullscreenDialog: true,
+              // fullscreenDialog: true,
             ));
       },
       hoverColor: Colors.blueAccent,

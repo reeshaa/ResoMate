@@ -8,9 +8,13 @@ class Bandpressed extends StatefulWidget {
 class _BandpressedState extends State<Bandpressed> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white,
-      child: Text("data"),
+    return MaterialApp(
+      home: Scaffold(
+        body: Container(
+          color: Colors.white,
+          child: Text("data"),
+        ),
+      ),
     );
   }
 }

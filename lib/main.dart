@@ -38,9 +38,10 @@ class BandSolo extends StatelessWidget {
                   fit: BoxFit.fitHeight,
                 ),
               ),
+              SizedBox(height: size.height * 0.06),
               Container(
-                  height: 60,
-                  width: 200,
+                  height: size.height * 0.075,
+                  width: size.width * 0.65,
                   child: RaisedButton(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20)),
@@ -53,10 +54,10 @@ class BandSolo extends StatelessWidget {
                     child: Text("Join a Band",
                         style: TextStyle(color: Colors.white, fontSize: 20)),
                   )),
-              SizedBox(height: 30),
+              SizedBox(height: size.height * 0.035),
               Container(
-                  height: 60,
-                  width: 200,
+                  height: size.height * 0.075,
+                  width: size.width * 0.65,
                   child: RaisedButton(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20)),

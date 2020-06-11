@@ -24,6 +24,8 @@ class _PostCardState extends State<PostCard> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
     Color dynamiciconcolor = (!isDarkMode) ? Colors.black54 : Colors.white70;
     Color dynamicuicolor =
@@ -41,14 +43,14 @@ class _PostCardState extends State<PostCard> {
       splashColor: Colors.purple,
       child: Container(
         padding: EdgeInsets.all(1.5),
-        height: 152,
+        height: size.height * 0.21,
         child: Card(
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
             color: (!isDarkMode) ? Colors.white : Colors.black,
             elevation: 1.1,
             child: Container(
-              padding: EdgeInsets.all(10),
+              padding: EdgeInsets.fromLTRB(10, 2, 2, 1),
               child: Row(
                 // mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -58,7 +60,7 @@ class _PostCardState extends State<PostCard> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       CircleAvatar(
-                        maxRadius: 48,
+                        maxRadius: size.height * 0.06,
                         backgroundImage:
                             NetworkImage(widget.bandInfo.bandLogoURL),
                       ),
@@ -74,10 +76,10 @@ class _PostCardState extends State<PostCard> {
                     ],
                   ),
                   SizedBox(
-                    width: 40.0,
+                    width: size.width * 0.07,
                   ),
                   Container(
-                    width: 220,
+                    width: size.width * 0.6,
                     padding: EdgeInsets.all(2),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -86,7 +88,8 @@ class _PostCardState extends State<PostCard> {
                           children: <Widget>[
                             Text(widget.bandInfo.bandName,
                                 style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 31)),
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: size.width * 0.075)),
                             SizedBox(width: 25),
                           ],
                         ),

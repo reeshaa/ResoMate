@@ -9,9 +9,15 @@ class _BandpressedState extends State<Bandpressed> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        color: Colors.white,
-        child: Text("data"),
+      body: Center(
+        child: Container(
+            color: Colors.white,
+            child: RaisedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              color: Colors.amber,
+            )),
       ),
     );
   }

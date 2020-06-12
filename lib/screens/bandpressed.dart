@@ -5,6 +5,7 @@ import 'package:resomate/models/bandinfo.dart';
 import 'package:resomate/models/bandinfowidget.dart';
 import 'package:social_media_buttons/social_media_buttons.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:resomate/screens/commonpage.dart';
 
 class Bandpressed extends StatefulWidget {
   final BandInfo bandInfo;
@@ -20,10 +21,13 @@ class _BandpressedState extends State<Bandpressed> {
 
     return Scaffold(
         backgroundColor: Colors.white,
-        body: Stack(children: <Widget>[
+        body: Stack(overflow: Overflow.clip, children: <Widget>[
           Positioned(
-            bottom: size.height * 0.72,
-            right: -size.height * 1.45,
+            // bottom: 500,
+            bottom: size.height * 0.69,
+            // // right: 700,
+            right: -1150,
+
             child: Image.asset(
               'assets/circle-cropped.png',
             ),
@@ -38,7 +42,10 @@ class _BandpressedState extends State<Bandpressed> {
                   color: Colors.white,
                 ),
                 onPressed: () {
-                  // TODO :add naviation
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CommonPage()),
+                  );
                 }),
           ),
           Align(
@@ -96,7 +103,8 @@ class _BandpressedState extends State<Bandpressed> {
             child: SocialMediaButton.whatsapp(
               size: size.width * 0.18,
               color: Colors.green[400],
-              url: "https://twitter.com/CipliOnat",
+              url:
+                  "https://wa.me/?text=I'm%20inquiring%20about%20the%20band%20member%20listing",
               onTap: () {
                 print('onTap ');
               },
@@ -105,7 +113,7 @@ class _BandpressedState extends State<Bandpressed> {
           Align(
             alignment: Alignment(0, 0.95),
             child: SocialMediaButton.twitter(
-              url: "https://twitter.com/CipliOnat",
+              url: "https://twitter.com/",
               size: size.width * 0.09,
               color: Colors.blue,
             ),
@@ -115,7 +123,7 @@ class _BandpressedState extends State<Bandpressed> {
             child: SocialMediaButton.instagram(
               size: size.width * 0.09,
               color: Colors.pink,
-              url: "https://twitter.com/CipliOnat",
+              url: "https://www.instagram.com/",
               onTap: () {
                 print('onTap ');
               },
@@ -126,7 +134,7 @@ class _BandpressedState extends State<Bandpressed> {
             child: SocialMediaButton.spotify(
               color: Colors.lightGreen[900],
               size: size.width * 0.09,
-              url: "https://twitter.com/CipliOnat",
+              url: "https://www.spotify.com/",
               onTap: () {
                 print('onTap ');
               },
@@ -137,7 +145,7 @@ class _BandpressedState extends State<Bandpressed> {
             child: SocialMediaButton.youtube(
               color: Colors.redAccent[700],
               size: size.width * 0.09,
-              url: "https://twitter.com/CipliOnat",
+              url: "https://youtube.com/",
               onTap: () {
                 print('onTap ');
               },
@@ -148,7 +156,7 @@ class _BandpressedState extends State<Bandpressed> {
             child: SocialMediaButton.facebook(
               color: Colors.blue,
               size: size.width * 0.09,
-              url: "https://twitter.com/CipliOnat",
+              url: "https://facebook.com/",
               onTap: () {
                 print('onTap ');
               },

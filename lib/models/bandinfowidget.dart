@@ -37,7 +37,7 @@ class _PostCardState extends State<PostCard> {
       splashColor: Colors.purple,
       child: Container(
         padding: EdgeInsets.all(1.5),
-        height: size.height * 0.21,
+        height: size.height * 0.18,
         child: Card(
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),

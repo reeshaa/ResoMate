@@ -59,7 +59,7 @@ class _AddAssignmentState extends State<AddAssignment> {
         _moredetailslinkcontroller?.text ?? "Band Genre",
         _membercountcontroller?.text ?? "Band Members",
         _placecontroller?.text ?? "Place",
-        _instrumentcontroller?.text ?? "Place",
+        _instrumentcontroller?.text ?? "Instrument",
       ).then((statusCode) {
         setState(() {
           this.isLoading = false;

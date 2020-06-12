@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:resomate/screens/addinfo.dart';
 import 'package:resomate/screens/detail.dart';
+import 'package:resomate/screens/addpinfo.dart';
 
 void main() {
   runApp(MainPage());
@@ -48,8 +50,10 @@ class BandSolo extends StatelessWidget {
                     elevation: 20,
                     color: Colors.deepPurpleAccent,
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Detail()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => PersonalInfo()));
                     },
                     child: Text("Join a Band",
                         style: TextStyle(color: Colors.white, fontSize: 20)),

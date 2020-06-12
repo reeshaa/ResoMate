@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:uuid/uuid.dart';
-// import 'package:resomate/models/bandinfo.dart';
+import 'package:resomate/models/bandinfo.dart';
 
 Future<int> addAssignmentToDB(
   String bandName,

@@ -189,14 +189,14 @@ class _PersonalInfoState extends State<PersonalInfo> {
               child: RaisedButton(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30)),
-                color: Colors.black,
+                color: Colors.purple,
                 child: isLoading
                     ? CupertinoActivityIndicator()
                     : Text('Login',
                         style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
-                            color: Colors.pink)),
+                            color: Colors.white)),
                 onPressed: () {
                   onPressRegister();
                 },

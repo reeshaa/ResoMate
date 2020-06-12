@@ -149,7 +149,7 @@ class _AddAssignmentState extends State<AddAssignment> {
                 return null;
               },
               keyboardType: TextInputType.multiline,
-              maxLines: 18,
+              maxLines: 5,
               controller: controllervar,
               decoration:
                   InputDecoration(border: InputBorder.none, filled: true))
@@ -185,7 +185,7 @@ class _AddAssignmentState extends State<AddAssignment> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('New Band'),
+        title: Text('Add Demo Band'),
         actions: <Widget>[
           FlatButton(
             child: isLoading

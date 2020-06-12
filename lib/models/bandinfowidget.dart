@@ -42,7 +42,7 @@ class _PostCardState extends State<PostCard> {
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
             // color: (!isDarkMode) ? Colors.white : Colors.black,
-            elevation: 1.1,
+            elevation: 4,
             child: Container(
               padding: EdgeInsets.fromLTRB(10, 2, 2, 1),
               child: Row(

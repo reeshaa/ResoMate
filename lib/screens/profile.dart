@@ -69,6 +69,7 @@ class _ProfileState extends State<Profile> {
             height: 30,
             thickness: 1.5,
           ),
+          SizedBox(height: 10),
           Text(
             "Instrument",
             style: TextStyle(

@@ -16,7 +16,7 @@ class _DetailState extends State<Detail> {
               child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text("ADD USER DETAILS HERE"),
+              Text("DIRECT ACCESS"),
               RaisedButton(
                 onPressed: () {
                   Navigator.push(

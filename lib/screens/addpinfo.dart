@@ -182,6 +182,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
             _pentryField("Phone Number",
                 controllervar: _pphonecontroller, isRequired: true),
             _pdescriptionField("Experience", controllervar: _pexperience),
+            SizedBox(height: 40),
             Container(
               height: MediaQuery.of(context).size.height * 0.075,
               width: MediaQuery.of(context).size.width * 0.5,

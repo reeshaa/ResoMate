@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:resomate/models/bandinfo.dart';
-import 'package:resomate/models/bandinfowidget.dart';
+// import 'package:resomate/models/bandinfowidget.dart';
 import 'package:social_media_buttons/social_media_buttons.dart';
-import 'package:url_launcher/url_launcher.dart';
+// import 'package:url_launcher/url_launcher.dart';
 import 'package:resomate/screens/commonpage.dart';
 
 class Bandpressed extends StatefulWidget {

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'package:flutter/services.dart';
-import 'dart:convert';
-import 'dart:async';
-import 'dart:io';
+// import 'package:http/http.dart' as http;
+// import 'package:flutter/services.dart';
+// import 'dart:convert';
+// import 'dart:async';
+// import 'dart:io';
 import 'package:flutter/foundation.dart';
-import 'dart:typed_data';
+// import 'dart:typed_data';
 import 'package:resomate/screens/bandpressed.dart';
 import 'package:resomate/models/bandinfo.dart';
 
@@ -22,10 +22,10 @@ class _PostCardState extends State<PostCard> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-    bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
-    Color dynamiciconcolor = (!isDarkMode) ? Colors.black54 : Colors.white70;
-    Color dynamicuicolor =
-        (!isDarkMode) ? new Color(0xfff8faf8) : Color.fromRGBO(35, 35, 35, 1.0);
+    // bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
+    // Color dynamiciconcolor = (!isDarkMode) ? Colors.black54 : Colors.white70;
+    // Color dynamicuicolor =
+    //     (!isDarkMode) ? new Color(0xfff8faf8) : Color.fromRGBO(35, 35, 35, 1.0);
     return InkWell(
       onTap: () {
         Navigator.push(
@@ -41,7 +41,7 @@ class _PostCardState extends State<PostCard> {
         child: Card(
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-            color: (!isDarkMode) ? Colors.white : Colors.black,
+            // color: (!isDarkMode) ? Colors.white : Colors.black,
             elevation: 1.1,
             child: Container(
               padding: EdgeInsets.fromLTRB(10, 2, 2, 1),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:resomate/screens/addinfo.dart';
+// import 'package:resomate/screens/addinfo.dart';
 import 'package:resomate/screens/detail.dart';
 import 'package:resomate/screens/addpinfo.dart';
 

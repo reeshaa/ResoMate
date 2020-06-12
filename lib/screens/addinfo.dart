@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:intl/intl.dart';
+// import 'package:intl/intl.dart';
 import 'package:resomate/services/newBand.dart';
 
 class AddAssignment extends StatefulWidget {
@@ -19,7 +19,7 @@ class _AddAssignmentState extends State<AddAssignment> {
       _descriptioncontroller,
       _subjectcodecontroller,
       _moredetailslinkcontroller,
-      _submissionlinkcontroller,
+      // _submissionlinkcontroller,
       _membercountcontroller,
       _placecontroller,
       _instrumentcontroller;
@@ -40,7 +40,7 @@ class _AddAssignmentState extends State<AddAssignment> {
     this._descriptioncontroller = new TextEditingController();
     this._moredetailslinkcontroller = new TextEditingController();
     this._subjectcodecontroller = new TextEditingController();
-    this._submissionlinkcontroller = new TextEditingController();
+    // this._submissionlinkcontroller = new TextEditingController();
     this._membercountcontroller = new TextEditingController();
     this._placecontroller = new TextEditingController();
     this._instrumentcontroller = new TextEditingController();

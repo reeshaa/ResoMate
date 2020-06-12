@@ -5,8 +5,17 @@ class DrawerWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        child: Column(
-          children: <Widget>[SizedBox(height: 40), Text("stuff")],
+        child: Center(
+          child: Column(
+            children: <Widget>[
+              SizedBox(height: 40),
+              Text("Sorry, Still under Development",
+                  style: TextStyle(
+                    fontSize: 32,
+                  ),
+                  textAlign: TextAlign.center)
+            ],
+          ),
         ),
       ),
     );

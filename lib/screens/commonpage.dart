@@ -39,7 +39,8 @@ class _CommonPageState extends State<CommonPage> {
         initialIndex: 1,
         length: iconList.length,
         child: Scaffold(
-          backgroundColor: Colors.pink[400],
+          // backgroundColor: Colors.pink[400],
+          backgroundColor: Colors.deepPurpleAccent[100],
           appBar: AppBar(
               elevation: 10,
               actions: <Widget>[
@@ -62,11 +63,14 @@ class _CommonPageState extends State<CommonPage> {
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                           colors: <Color>[
-                    // Colors.purpleAccent,
+                    // Colors.indigo[900],
+                    // Colors.blue
+                    // // Colors.indigo,
                     Colors.deepPurple,
-                    // Colors.purple,
-                    // Colors.pink[400],
-                    Colors.pink[900]
+                    Colors.purpleAccent[700],
+
+                    // Colors.deepPurple, original
+                    // Colors.pink[900] og
                     // Colors.pink[600]
                   ]))),
               title: Text(
@@ -78,7 +82,8 @@ class _CommonPageState extends State<CommonPage> {
             child: TabBarView(
               children: [
                 Container(
-                    color: Colors.white, child: Center(child: Text("data2"))),
+                    color: Colors.white,
+                    child: Center(child: Text("Favourites to be added here"))),
                 Home(),
                 Profile(),
               ],

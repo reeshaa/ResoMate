@@ -5,7 +5,7 @@ import 'package:resomate/models/bandinfo.dart';
 // import 'package:resomate/models/bandinfowidget.dart';
 import 'package:social_media_buttons/social_media_buttons.dart';
 // import 'package:url_launcher/url_launcher.dart';
-import 'package:resomate/screens/commonpage.dart';
+import 'package:resomate/tabs/commonpage.dart';
 
 class Bandpressed extends StatefulWidget {
   final BandInfo bandInfo;
@@ -53,20 +53,21 @@ class _BandpressedState extends State<Bandpressed> {
             child: CircleAvatar(
               maxRadius: size.width * .2,
               backgroundImage: NetworkImage(
-                  'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSUsZzX75YWPYoBFB_Q-6vloVVYPDhDYiY7AsN8-NSHLcGmToFN&usqp=CAU'),
+                  'https://i.ytimg.com/vi/T_u_qFNBgn0/maxresdefault.jpg'),
+              // 'https://lh3.googleusercontent.com/proxy/FGXwZxR05Fauzc5ehTOIc4IsCrjlM65sZXg0OBfEDWZXOh3JWSglW06N7b-wqo1-PovP1LGDL3iv2dUkwoMbU9Df3PimFFqNdFcyHrM5mkX9CMzNEKA4pMeJORX6yNbsuEDsV16ZFJp2J1dtavtAzrUOlm6sIWnB5iKeBB59Qrmec_EOR5qYZ-Rb'),
             ),
           ),
           Align(
-            alignment: Alignment(0, -.25),
+            alignment: Alignment(0, -.26),
             child: Text(
-              "BAND NAME",
+              "PHALANGES",
               style: TextStyle(
                   fontSize: size.width * 0.08, fontWeight: FontWeight.w700),
             ),
           ),
           Align(
             alignment: Alignment(0, -.16),
-            child: Text("genre",
+            child: Text("Indie",
                 style: TextStyle(
                   fontSize: size.width * 0.04,
                   color: Colors.grey,
@@ -75,17 +76,23 @@ class _BandpressedState extends State<Bandpressed> {
           Align(
             alignment: Alignment(0, 0.25),
             child: Container(
+              // padding: EdgeInsets.all(2),
               height: size.height / 3.5,
               width: size.width * 0.9,
               child: Card(
                   elevation: 10,
-                  child: Center(
-                      child: Text(
-                    'some shitty ass\nlong\nbio',
-                    style: TextStyle(
-                      fontSize: size.width * 0.05,
-                    ),
-                  ))),
+                  child: Padding(
+                    padding: EdgeInsets.all(12),
+                    child: Center(
+                        child: Text(
+                      "A band popular in the industry since the '90s. Popular for 'Smelly Cat' cover.\n\nThe band consists of people from the age of 35 to the age of 16.\nLooking for a female vocalist.\nLocation doesn't matter as we are planning of making a cover by online medium.",
+                      style: TextStyle(
+                          fontSize: size.width * 0.045,
+                          color: Colors.grey[700],
+                          fontWeight: FontWeight.w300),
+                      textAlign: TextAlign.center,
+                    )),
+                  )),
             ),
           ),
           Align(
@@ -95,16 +102,28 @@ class _BandpressedState extends State<Bandpressed> {
                       fontSize: size.width * 0.07,
                       fontWeight: FontWeight.w600))),
           Align(
-              alignment: Alignment(-.75, 0.7),
-              child: Text("Name of that person",
-                  style: TextStyle(fontSize: size.width * 0.05))),
+              alignment: Alignment(-.8, 0.72),
+              child: RichText(
+                text: TextSpan(
+                    text: "Phoebe Buffay\n",
+                    style: TextStyle(
+                        fontSize: size.width * 0.05, color: Colors.black),
+                    children: <TextSpan>[
+                      TextSpan(
+                          text: 'Lead Artist',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w300,
+                              fontSize: size.width * 0.04,
+                              color: Colors.grey[700]))
+                    ]),
+              )),
           Align(
             alignment: Alignment(0.82, 0.7),
             child: SocialMediaButton.whatsapp(
               size: size.width * 0.18,
               color: Colors.green[400],
               url:
-                  "https://wa.me/?text=I'm%20inquiring%20about%20the%20band%20member%20listing",
+                  "https://wa.me/919148116316?text=I'm%20a%20user%20from%20ResoMate\nI%20saw%20your%20team%20on%20the%20app.%20\n\nHere%20are%20my%20details-%20\nName%20%20:%20Taylor%20Swift%20\nAge%20%20:%2020\nLocation%20%20:%20Bangalore%20%20%20\n\nI%20am%20applying%20for%20the%20position%20of%20FEMALE%20VOCALIST\n\n\n//custom%20messege%20here",
               onTap: () {
                 print('onTap ');
               },

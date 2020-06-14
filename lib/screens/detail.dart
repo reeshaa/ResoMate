@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:resomate/screens/commonpage.dart';
+import 'package:resomate/tabs/commonpage.dart';
 
 class Detail extends StatefulWidget {
   @override

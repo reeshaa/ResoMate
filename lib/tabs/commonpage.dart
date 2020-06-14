@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 // import 'package:flutter_icons/flutter_icons.dart';
 import 'package:jumping_bottom_nav_bar/jumping_bottom_nav_bar.dart';
 import 'package:resomate/screens/addinfo.dart';
-import 'package:resomate/screens/profile.dart';
-import 'package:resomate/screens/home.dart';
+import 'package:resomate/tabs/profile.dart';
+import 'package:resomate/tabs/home.dart';
 import 'package:resomate/screens/drawerwidget.dart';
 // import 'package:flutter_icons/flutter_icons.dart';
 

@@ -37,7 +37,7 @@ class _PostCardState extends State<PostCard> {
       splashColor: Colors.purple,
       child: Container(
         padding: EdgeInsets.all(1.5),
-        height: size.height * 0.18,
+        height: size.height * 0.19,
         child: Card(
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
@@ -70,12 +70,13 @@ class _PostCardState extends State<PostCard> {
                     ],
                   ),
                   SizedBox(
-                    width: size.width * 0.07,
+                    width: size.width * 0.04,
                   ),
                   Container(
-                    width: size.width * 0.6,
+                    width: size.width * 0.62,
                     padding: EdgeInsets.all(2),
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Column(
@@ -83,7 +84,7 @@ class _PostCardState extends State<PostCard> {
                             Text(widget.bandInfo.bandName,
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
-                                    fontSize: size.width * 0.075)),
+                                    fontSize: size.width * 0.07)),
                             SizedBox(width: 25),
                           ],
                         ),

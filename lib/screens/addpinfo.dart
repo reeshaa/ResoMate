@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 // import 'package:intl/intl.dart';
-import 'package:resomate/screens/commonpage.dart';
+import 'package:resomate/tabs/commonpage.dart';
 // import 'package:resomate/screens/detail.dart';
 import 'package:resomate/services/newPerson.dart';
 
@@ -61,9 +61,9 @@ class _PersonalInfoState extends State<PersonalInfo> {
         this.isLoading = true;
       });
       addPersonToDB(
-        _titlecontroller?.text ?? "Untitled",
         _pnamecontroller?.text ?? "Name",
         _pdpcontroller?.text ?? "Default Picture",
+        _titlecontroller?.text ?? "Untitled",
         _pgenrecontroller?.text ?? "Genre",
         _pplacecontroller?.text ?? "Place",
         _pinstrumentcontroller?.text ?? "Instrument",
@@ -173,6 +173,8 @@ class _PersonalInfoState extends State<PersonalInfo> {
                 controllervar: _pnamecontroller, isRequired: true),
             _pentryField("Place",
                 controllervar: _pplacecontroller, isRequired: true),
+            _pentryField("DP URL",
+                controllervar: _pdpcontroller, isRequired: true),
             _pentryField("Age", controllervar: _pagecontroller),
             _pdescriptionField("Bio", controllervar: _pbiocontroller),
             _pentryField("Instrument",
